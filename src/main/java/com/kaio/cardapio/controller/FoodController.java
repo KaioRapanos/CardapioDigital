@@ -25,7 +25,7 @@ public class FoodController {
 
     @Autowired
     private FoodRepository repository;
-    
+
     @PostMapping
     public void saveFood(@RequestBody FoodRequestDTO data) {
         Food foodData = new Food(data);
@@ -56,27 +56,3 @@ public class FoodController {
         return foodList;
     }
 }
-/*@RestController
-@RequestMapping(value = "/food" )
-@CrossOrigin
-public class FoodController {
-
-	@Autowired
-	private FoodRepository repository;
-	
-	@PostMapping
-	public void saveFood(@RequestBody FoodRequestDTO data) {
-		Food foodData = new Food(data);
-		repository.save(foodData);
-		return;
-	}
-	
-	@GetMapping(value = "/food")
-	public List<FoodResponseDTO> getAll() {
-	
-		List<FoodResponseDTO> foodList = repository.findAll().stream().map(FoodResponseDTO::new).toList();
-		return foodList;
-	}
-	
-	
-}*/
